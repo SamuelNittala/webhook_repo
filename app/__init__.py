@@ -9,6 +9,7 @@ def create_app():
     app = Flask(__name__)
     # registering all the blueprints
     app.register_blueprint(webhook)
+    #configuring db
     app.config["MONGO_URI"] = "mongodb://localhost:27017/myDatabase"
     mongo.init_app(app) 
     return app
